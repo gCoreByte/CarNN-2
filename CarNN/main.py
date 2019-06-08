@@ -15,7 +15,7 @@ pyg.display.set_caption("Self-Learning AI Simulation")
 all_sprites = pyg.sprite.Group()
 car = Car(500, 500, 0)
 all_sprites.add(car)
-
+map_guide = [] # TODO: finish map, can't test collision otherwise
 
 # main loop
 run = True
@@ -33,7 +33,7 @@ while run:
     elif keys[pyg.K_DOWN]:
         acceleration = -0.25
 
-    car.update(turn, acceleration)
+    car.update(turn, acceleration, map_guide)
     window.fill(BG_COLOUR)
     all_sprites.draw(window)
     pyg.display.update()
